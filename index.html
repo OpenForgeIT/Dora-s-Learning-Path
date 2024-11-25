@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dora's Learning Path</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(145deg, #fbd7b7, #f99c42);
+            color: #3e3e3e;
+            padding: 2.5em 1.5em;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #f99c42;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 0.5em;
+            font-weight: 500;
+            color: #555;
+        }
+
+        table {
+            width: 100%;
+            margin: 3em auto;
+            border-collapse: collapse;
+            max-width: 1200px;
+            background-color: #fff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1.2em;
+            text-align: left;
+            font-weight: 500;
+            color: #555;
+        }
+
+        th {
+            background-color: #f99c42;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f4f4f4;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #f99c42;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            background: linear-gradient(145deg, #fbd7b7, #f99c42);
+            padding: 2em 0;
+            color: #3e3e3e;
+            font-weight: 500;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        .progress-container {
+            text-align: center;
+        }
+
+        .progress-container a {
+            background-color: #f99c42;
+            padding: 0.8em 1.5em;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .progress-container a:hover {
+            background-color: #f57c00;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dora's Learning Path</h1>
+        <p>Explore and learn with Dora! 🌟</p>
+    </header>
+
+    <main class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Days</th>
+                    <th>Topic</th>
+                    <th>Duration</th>
+                    <th>Link</th>
+                    <th>Assignment</th>
+                    <th>Description</th>
+                    <th>Progress</th>
+                </tr>
+            </thead>
+            <tbody id="learning-table">
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>Happy Exploring! ❤️</p>
+    </footer>
+
+    <script>
+        const data = [
+            { week: "Week 1", days: "Day 1-3", topic: "HTML Basics", duration: "2 hours", link: "https://youtu.be/kUMe1FH4CHE?si=sC1aYgVdaEtqd1A4", assignment: "Dora’s Backpack Checklist", description: "Create a checklist page using HTML.", submitLink: "https://timesofindia.indiatimes.com/sports/cricket/india-vs-australia-border-gavaskar-trophy-2024-live-score-ind-vs-aus-1st-test-match-day-4-today-live-streaming-online/liveblog/115638960.cms" },
+            { week: "Week 1", days: "Day 4-6", topic: "CSS Basics", duration: "3 hours", link: "https://youtu.be/OXGznpKZ_sA?si=BFObyoJ1NuhLR_sD", assignment: "Style Dora’s Backpack Checklist", description: "Add colors, borders, and fonts using CSS.", submitLink: "https://forms.gle/cssBasicsForm" },
+            { week: "Week 2", days: "Day 7-9", topic: "Flexbox & CSS Grid", duration: "3 hours", link: "https://youtu.be/phWxA89Dy94?si=pFXUvWrSw5BLbZpn", assignment: "Jungle Adventure Map", description: "Create a layout using Flexbox and CSS Grid.", submitLink: "https://forms.gle/flexboxForm" },
+            { week: "Week 2", days: "Day 10-13", topic: "Summarize & Final Project", duration: "4 hours", assignment: "The Explorer’s Homepage", description: "Build a structured and styled homepage.", submitLink: "https://forms.gle/finalProjectWeek2Form" },
+            { week: "Week 3", days: "Day 14-16", topic: "JavaScript Fundamentals", duration: "4 hours", link: "https://youtu.be/lkIFF4maKMU?si=Kc4D80tL6SKB8Ylf", assignment: "Swiper Alert", description: "Create an alert using JavaScript and basic events.", submitLink: "https://forms.gle/jsBasicsForm" },
+            { week: "Week 3", days: "Day 17-19", topic: "DOM Manipulation & Events", duration: "3 hours", link: "https://youtu.be/y17RuWkWdn8?si=0mUI_oCV_GrgiwVy", assignment: "Map’s Magic Greeting", description: "Create an interactive greeting button.", submitLink: "https://forms.gle/domEventsForm" },
+            { week: "Week 3", days: "Day 20-22", topic: "Summarize & Final Project", duration: "5 hours", assignment: "Dora’s Jungle To-Do List", description: "Build a to-do list app using DOM manipulation.", submitLink: "https://forms.gle/finalProjectWeek3Form" },
+            { week: "Week 4", days: "Day 23-25", topic: "JavaScript Advanced (ES6)", duration: "4 hours", link: "https://youtu.be/R9I85RhI7Cg?si=H13EF2ZGYl8dTep5", assignment: "Swiper’s Shopping List", description: "Use arrays and ES6 features for list manipulation.", submitLink: "https://forms.gle/jsAdvancedForm" },
+            { week: "Week 4", days: "Day 26-28", topic: "Responsive Design", duration: "3 hours", link: "https://youtu.be/x4u1yp3Msao?si=hsrYZGTVl6cCztLk", assignment: "Responsive Jungle Map", description: "Make your Jungle Adventure Map responsive.", submitLink: "https://forms.gle/responsiveForm" },
+            { week: "Week 4", days: "Day 29-31", topic: "Summarize & Final Project", duration: "5 hours", assignment: "Adventure Landing Page", description: "Create a responsive, animated landing page.", submitLink: "https://forms.gle/finalProjectWeek4Form" }
+        ];
+
+        const tableBody = document.getElementById("learning-table");
+
+        data.forEach(item => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${item.week}</td>
+                <td>${item.days}</td>
+                <td>${item.topic}</td>
+                <td>${item.duration}</td>
+                <td>${item.link ? `<a href="${item.link}" target="_blank">Watch Video</a>` : ""}</td>
+                <td>${item.assignment}</td>
+                <td>${item.description}</td>
+                <td class="progress-container"><a href="${item.submitLink}" target="_blank">Submit</a></td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
+</body>
+</html>
